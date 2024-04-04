@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from textExtraction import extract_text_from_pdf
 pdf_text = extract_text_from_pdf('C:/Users/Mustafa Syed/Desktop/resumeschezeenfazulbhoy.pdf')
 print(pdf_text)
@@ -124,7 +127,7 @@ Json_form='''{
 #chatgpt code sample to generate resumes
 import requests
 import json
-#api_key=""
+api_key = os.environ.get("api_key")
 headers = {
                     'Content-Type': 'application/json',
                     'Authorization': f'Bearer {api_key}',
